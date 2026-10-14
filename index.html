@@ -1,521 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julia Marques | Portifólio</title>
-    <!-- Google Fonts; Inter para interface tecnica e Fira Code Para terminal -->
+    <title>Julia Fialho — Desenvolvedora de produtos digitais</title>
+    <meta name="description" content="Julia Fialho desenvolve sistemas web, APIs e automações sob medida — do entendimento do problema ao produto publicado.">
+    <meta property="og:title" content="Julia Fialho — Desenvolvedora de produtos digitais">
+    <meta property="og:description" content="Sistemas web, APIs e automações sob medida, do problema ao produto.">
+    <meta property="og:image" content="assets/Perfil-Julia.jpeg">
+    <meta name="theme-color" content="#0b0b0c">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0c'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-weight='700' font-size='14' fill='%23ff7a45' text-anchor='middle'%3EJF%3C/text%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome para ícones premium -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-             theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            lightBg: '#ffffff',
-                            lightAlt: '#f8fafc',
-                            lightText: '#0f172a',
-                            lightBorder: '#e2e8f0',
-                            darkBg: '#020617',
-                            darkAlt: '#0f172a',
-                            darkText: '#f8fafc',
-                            darkBorder: '#334155',
-                            cobalt: '#1d4ed8',
-                            purpleGlow: '#a855f7',
-                            indigoGlow: '#6366f1'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Estilo personalizado -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-brand-lightBg text-brand-lightText dark:bg-brand-darkBg dark:text-brand-darkText font-sans antialiased transition-colors duration-500 overflow-x-hidden">
-    
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 w-full glass-panel transition-all duration-300 px-6 py-4 md:px-12 border-b">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-500 dark:from-sky-400 dark:to-purple-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
-                JULIA FIALHO <span class="text-xs font-mono text-slate-400 dark:text-slate-500"></span>
+<body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="#" class="logo" aria-label="Julia Fialho, início">
+                <span class="logo-mark" aria-hidden="true">JF</span>
+                <span class="logo-name">Julia Fialho</span>
             </a>
-            
-            <div class="flex items-center gap-6">
-                <div class="hidden md:flex gap-6 text-sm font-medium">
-                    <a href="#sobre" class="hover:text-blue-600 dark:hover:text-purple-400 transition-colors">Sobre</a>
-                    <a href="#tecnologias" class="hover:text-blue-600 dark:hover:text-purple-400 transition-colors">Stack</a>
-                    <a href="#projetos" class="hover:text-blue-600 dark:hover:text-purple-400 transition-colors">Projetos</a>
-                    <a href="#contato" class="hover:text-blue-600 dark:hover:text-purple-400 transition-colors">Contato</a>
-                </div>
+            <nav class="nav" aria-label="Principal">
+                <a href="#projetos">Projetos</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#processo">Processo</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+            <a href="#contato" class="btn btn-sm">Fale comigo</a>
+        </div>
+    </header>
 
-                <!-- Botão de Troca de Tema Dinâmico -->
-                <button id="themeToggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-900/50 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-110 active:scale-95 transition-all duration-200" aria-label="Alternar Tema">
-                    <i id="themeIcon" class="fa-solid fa-sun text-purple-400"></i>
-                </button>
-            </div>
-        </div>    
-    </nav>
-    <main class="relative z-10 max-w-7xl mx-auto px-6 py-6 py-12 lg:px-12 space-y-32">
-        
-        <!-- Seção Hero -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 items-center pt-8">
-            <div class="lg:col-span-7 space-y-6 order-2 lg:order-1 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-600 dark:text-sky-300 text-xs font-mono">
-                    <span class="flex h-2.5 w-2.5 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
-                    </span>
-                    Disponível para novos desafios backend / pesquisa IA
-                </div>
-                
-                <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-none">
-                    Julia <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-sky-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">Fialho</span>
-                </h1>
-                
-                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-350 max-w-xl font-light">
-                    Construindo arquiteturas resilientes com <strong class="font-medium text-slate-800 dark:text-white">C# / .NET</strong> e desbravando o mundo real com Visão Computacional em <strong class="font-medium text-slate-800 dark:text-white">Python & YOLOv8</strong>.
+    <main id="conteudo">
+
+        <!-- ===================== Abertura ===================== -->
+        <section class="wrap hero">
+            <p class="availability"><span class="dot" aria-hidden="true"></span>Disponível para projetos e novas oportunidades</p>
+            <h1>Software sob medida,<br><span class="muted">do problema ao produto.</span></h1>
+            <div class="hero-foot">
+                <p class="lede">
+                    Sou Julia, desenvolvedora de produtos digitais. Transformo controles manuais,
+                    planilhas e processos repetitivos em sistemas simples de usar — com
+                    requisitos claros, código bem estruturado e entrega publicada.
                 </p>
-
-                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-                    <a href="https://linkedin.com/in/julia-marques-fialho" target="_blank" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg shadow-blue-600/20 dark:shadow-blue-500/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
-                        <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/juliamdev" target="_blank" class="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 hover:bg-slate-100 dark:hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200">
-                        <i class="fa-brands fa-github mr-2"></i> GitHub
-                    </a>
-                    
+                <div class="hero-actions">
+                    <a href="#contato" class="btn">Iniciar um projeto</a>
+                    <a href="#projetos" class="link-arrow">Ver projetos <span aria-hidden="true">→</span></a>
                 </div>
             </div>
 
-            <!-- Imagem de Perfil -->
-             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
-                <div class="relative group">
-                    <!-- Brilho ao redor da foto para dar efeito tecnológico e robusto -->
-                    <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 opacity-40 group-hover:opacity-80 blur transition duration-500"></div>
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-slate-950 bg-slate-900">
-                        <img 
-                            src="assets/Perfil-Julia.jpeg"
-                            alt="Julia Fialho" 
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.src='https://placehold.co/400x400/0f172a/ffffff?text=JF'"
-                        >
+            <ul class="hero-strip" aria-label="Áreas de atuação">
+                <li><span>01</span>Sistemas de gestão</li>
+                <li><span>02</span>APIs e integrações</li>
+                <li><span>03</span>Dashboards web</li>
+                <li><span>04</span>Automação de processos</li>
+            </ul>
+        </section>
+
+        <!-- ===================== Projetos ===================== -->
+        <section id="projetos" class="wrap section">
+            <header class="section-head">
+                <p class="kicker">Projetos</p>
+                <h2>Produtos que construí, do requisito ao código.</h2>
+            </header>
+
+            <!-- LocaFácil — destaque -->
+            <article class="case case-feature">
+                <div class="case-visual visual-locafacil">
+                    <div class="mock mock-json" aria-hidden="true">
+                        <div class="mock-bar"><i></i><i></i><i></i><span>GET /contratos/{id}/status</span></div>
+<pre><span class="p">{</span>
+  <span class="k">"status"</span>: <span class="s">"parcial"</span>,
+  <span class="k">"parcelas_em_aberto"</span>: <span class="n">2</span>,
+  <span class="k">"saldo_devedor"</span>: <span class="n">850.00</span>,
+  <span class="k">"proximo_vencimento"</span>: <span class="s">"2026-11-05"</span>,
+  <span class="k">"fim_do_contrato_em_dias"</span>: <span class="n">48</span>
+<span class="p">}</span></pre>
+                    </div>
+                    <div class="mock mock-flow" aria-hidden="true">
+                        <p class="flow-title">Pagamento parcial recebido</p>
+                        <div class="flow-row"><span>Parcela · set</span><b class="ok">quitada</b></div>
+                        <div class="flow-row"><span>Parcela · out</span><b class="warn">parcial</b></div>
+                        <div class="flow-row"><span>Parcela · nov</span><b class="idle">em aberto</b></div>
+                        <p class="flow-note">Alocado da parcela mais antiga para a mais recente</p>
                     </div>
                 </div>
+                <div class="case-info">
+                    <div class="case-head">
+                        <h3>LocaFácil</h3>
+                        <span class="pill pill-live">Em desenvolvimento</span>
+                    </div>
+                    <p class="case-lede">Gestão financeira de aluguéis para proprietários que controlam tudo no caderno ou na planilha.</p>
+                    <div class="case-cols">
+                        <div>
+                            <h4>Problema</h4>
+                            <p>Pagamentos chegam por Pix, muitas vezes parciais e sem boleto por parcela. Saber quem está em dia, quanto falta e quais contratos vencem vira trabalho manual.</p>
+                        </div>
+                        <div>
+                            <h4>Solução</h4>
+                            <p>API que registra contratos e pagamentos, abate a dívida automaticamente pela parcela mais antiga, calcula o saldo de cada contrato e envia um resumo diário por e-mail.</p>
+                        </div>
+                        <div>
+                            <h4>Como foi feito</h4>
+                            <p>Levantamento de requisitos e regras de negócio documentados, decisões registradas em ADRs, arquitetura em camadas e migrations versionadas.</p>
+                        </div>
+                    </div>
+                    <div class="case-foot">
+                        <ul class="tags">
+                            <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>Alembic</li><li>APScheduler</li>
+                        </ul>
+                        <a class="link-arrow" href="https://github.com/Juliamdev/locafacil-api" target="_blank" rel="noopener">Código e documentação <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="case-grid">
+                <!-- VisionFinance -->
+                <article class="case">
+                    <div class="case-visual visual-vision">
+                        <div class="browser">
+                            <div class="mock-bar"><i></i><i></i><i></i><span>visionfinance</span></div>
+                            <img src="assets/visionfinance.png" alt="Dashboard do VisionFinance com patrimônio total, projeção de rendimento e distribuição de ativos" width="1346" height="650" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <div class="case-head">
+                            <h3>VisionFinance</h3>
+                            <span class="pill">Concluído</span>
+                        </div>
+                        <p class="case-lede">Plataforma para acompanhar investimentos pessoais: patrimônio, distribuição por categoria e simulador de rentabilidade.</p>
+                        <p class="case-text">Login com Supabase Auth e Row Level Security no banco, para que cada pessoa veja apenas os próprios dados.</p>
+                        <div class="case-foot">
+                            <ul class="tags">
+                                <li>React</li><li>Supabase</li><li>PostgreSQL</li><li>Recharts</li>
+                            </ul>
+                            <a class="link-arrow" href="https://github.com/Juliamdev/VisionFinance" target="_blank" rel="noopener">Código <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Algoritmos CLI -->
+                <article class="case">
+                    <div class="case-visual visual-cli">
+                        <div class="mock mock-term" aria-hidden="true">
+                            <div class="mock-bar"><i></i><i></i><i></i><span>dotnet run</span></div>
+<pre><span class="dim">Algoritmos e Técnicas de Programação</span>
+<span class="dim">Escolha um tópico:</span>
+  Laços de repetição
+  Modularização
+<span class="sel">› Vetores</span>
+  Matrizes
+  Tratamento de exceções
+<span class="dim">↑↓ navegar · Enter abrir</span></pre>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <div class="case-head">
+                            <h3>Algoritmos CLI</h3>
+                            <span class="pill">Concluído</span>
+                        </div>
+                        <p class="case-lede">Ferramenta de estudo que criei como monitora: os 13 tópicos da disciplina em um aplicativo de terminal.</p>
+                        <p class="case-text">Teoria, exemplos, erros comuns e desafios com correção automática. Lógica separada da interface e coberta por testes.</p>
+                        <div class="case-foot">
+                            <ul class="tags">
+                                <li>C#</li><li>.NET</li><li>Spectre.Console</li><li>xUnit</li>
+                            </ul>
+                            <a class="link-arrow" href="https://github.com/Juliamdev/csharp-algorithms-guide" target="_blank" rel="noopener">Código <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Seção Sobre -->
-        <section id="sobre" class="space-y-8 scroll-mt-24">
-            <div class="flex flex-col items-center text-center space-y-3">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-purple-400 font-bold">Resumo Profissional</h2>
-                <h3 class="text-3xl font-bold tracking-tight">Arquitetura de Software & Inteligência Artificial</h3>
+        <!-- ===================== Serviços ===================== -->
+        <section id="servicos" class="wrap section">
+            <header class="section-head">
+                <p class="kicker">Serviços</p>
+                <h2>O que posso construir para o seu negócio.</h2>
+            </header>
+            <div class="services">
+                <article class="service">
+                    <span class="service-n">01</span>
+                    <h3>Sistemas de gestão sob medida</h3>
+                    <p>Cadastros, controle financeiro, contratos e relatórios do jeito que a sua operação funciona — no lugar de planilhas espalhadas.</p>
+                </article>
+                <article class="service">
+                    <span class="service-n">02</span>
+                    <h3>APIs e integrações</h3>
+                    <p>Back-end organizado e documentado para apps e sites, conectado a banco de dados, e-mail e serviços externos.</p>
+                </article>
+                <article class="service">
+                    <span class="service-n">03</span>
+                    <h3>Dashboards e aplicações web</h3>
+                    <p>Painéis com os números que importam, login seguro e uma interface que qualquer pessoa da equipe consegue usar.</p>
+                </article>
+                <article class="service">
+                    <span class="service-n">04</span>
+                    <h3>Automação de processos</h3>
+                    <p>Rotinas repetitivas — conferências, avisos, lançamentos — feitas automaticamente, com alertas quando algo precisa de atenção.</p>
+                </article>
             </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <div class="lg:col-span-7 glass-panel p-8 rounded-3xl space-y-6">
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg font-light">
-                        Sou graduanda em <span class="font-semibold text-slate-800 dark:text-white">Sistemas de Informação pela PUC Minas</span>. Minha jornada une a precisão cirúrgica de sistemas backend robustos com a pesquisa aplicada no domínio de Inteligência Artificial.
+        </section>
+
+        <!-- ===================== Processo ===================== -->
+        <section id="processo" class="wrap section">
+            <header class="section-head">
+                <p class="kicker">Processo</p>
+                <h2>Como um projeto acontece.</h2>
+            </header>
+            <ol class="process">
+                <li>
+                    <span class="step">Etapa 1</span>
+                    <h3>Entender</h3>
+                    <p>Conversa sobre o problema, quem vai usar e o que precisa mudar no dia a dia.</p>
+                </li>
+                <li>
+                    <span class="step">Etapa 2</span>
+                    <h3>Definir</h3>
+                    <p>Requisitos, regras de negócio e escopo por escrito — você sabe exatamente o que será entregue.</p>
+                </li>
+                <li>
+                    <span class="step">Etapa 3</span>
+                    <h3>Construir</h3>
+                    <p>Entregas curtas e funcionais, para você testar e ajustar o rumo cedo.</p>
+                </li>
+                <li>
+                    <span class="step">Etapa 4</span>
+                    <h3>Publicar</h3>
+                    <p>Sistema no ar, documentado e com acompanhamento após a entrega.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ===================== Sobre ===================== -->
+        <section id="sobre" class="wrap section">
+            <div class="about">
+                <figure class="about-photo">
+                    <img src="assets/Perfil-Julia.jpeg" alt="Retrato de Julia Fialho" width="1080" height="1080" loading="lazy">
+                </figure>
+                <div class="about-body">
+                    <p class="kicker">Sobre</p>
+                    <h2>Penso no produto antes de pensar no código.</h2>
+                    <p class="about-text">
+                        Estudo Sistemas de Informação na PUC Minas e trabalho como estagiária em
+                        desenvolvimento de sistemas. Gosto de chegar ao código já sabendo qual problema
+                        ele resolve e para quem — por isso documento requisitos, regras e decisões em
+                        todo projeto.
                     </p>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg font-light">
-                        Atuo projetando arquiteturas utilizando <span class="font-semibold text-slate-800 dark:text-white">C# / .NET Core</span> para orquestrar dados eficientemente, além de implementar redes neurais convolucionais focadas em visão computacional (<span class="font-semibold text-slate-800 dark:text-white">YOLO, OpenCV, PyTorch</span>) voltadas para o ambiente corporativo e médico.
-                    </p>
-                </div>
-                
-                <!-- Bento Box de Fatos Rápidos -->
-                <div class="lg:col-span-5 grid grid-cols-2 gap-4 w-full">
-                    
-                    <div class="glass-panel p-6 rounded-2xl text-center space-y-2 hover:-translate-y-1 transition-transform duration-300">
-                        <span class="text-3xl font-extrabold text-purple-600 dark:text-purple-400">100%</span>
-                        <p class="text-sm font-semibold">Código Limpo</p>
-                        <p class="text-xs text-slate-400">SOLID, Clean Architecture</p>
-                    </div>
-                    <div class="glass-panel p-6 rounded-2xl text-center space-y-2 hover:-translate-y-1 transition-transform duration-300">
-                        <span class="text-3xl font-extrabold text-pink-500">24/7</span>
-                        <p class="text-sm font-semibold">Inovação</p>
-                        <p class="text-xs text-slate-400">Evolução Contínua</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Seção Tecnologias  -->
-        <section id="tecnologias" class="space-y-8 scroll-mt-24">
-            <div class="flex flex-col items-center text-center space-y-3">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-purple-400 font-bold">Tecnologias</h2>
-                <h3 class="text-3xl font-bold tracking-tight">O meu Ecossistema Técnico</h3>
-            </div>
+                    <ol class="timeline">
+                        <li>
+                            <span class="tl-role">Estágio em Desenvolvimento de Sistemas</span>
+                            <span class="tl-meta">Atual</span>
+                        </li>
+                        <li>
+                            <span class="tl-role">Monitoria de Algoritmos e Técnicas de Programação</span>
+                            <span class="tl-meta">PUC Minas</span>
+                        </li>
+                        <li>
+                            <span class="tl-role">Projeto de extensão em visão computacional (YOLOv8)</span>
+                            <span class="tl-meta">Concluído</span>
+                        </li>
+                        <li>
+                            <span class="tl-role">Bacharelado em Sistemas de Informação</span>
+                            <span class="tl-meta">PUC Minas</span>
+                        </li>
+                    </ol>
 
-            <!-- Bento-style stack details -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Stack Backend -->
-                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h4 class="text-lg font-bold">Backend Development</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">C#, ASP.NET Core, APIs RESTful, Entity Framework Core e injeção de dependências.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">C# / .NET</span>
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">ASP.NET</span>
-                    </div>
-                </div>
+                    <dl class="stack">
+                        <div><dt>Back-end</dt><dd>Python, FastAPI, C#, .NET, PHP</dd></div>
+                        <div><dt>Dados</dt><dd>PostgreSQL, SQL Server, MySQL, Supabase</dd></div>
+                        <div><dt>Front-end</dt><dd>React, TypeScript</dd></div>
+                        <div><dt>Práticas</dt><dd>Requisitos, ADRs, testes, Git</dd></div>
+                    </dl>
 
-                <!-- Stack Computer Vision -->
-                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h4 class="text-lg font-bold">Computer Vision</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Visão Computacional aplicada com YOLOv8 para rastreamento de alta velocidade, PyTorch e OpenCV.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Python</span>
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">YOLOv8</span>
-                    </div>
-                </div>
-
-                <!-- Stack Data -->
-                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-pink-500/50 hover:shadow-lg hover:shadow-pink-500/5 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h4 class="text-lg font-bold">Persistência & Dados</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Modelagem relacional inteligente, performance em consultas pesadas SQL Server e arquitetura ORM.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">SQL Server</span>
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">EF Core</span>
-                    </div>
-                </div>
-
-                <!-- Stack DevOps/Git -->
-                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xl">
-                        <i class="fa-brands fa-git-alt"></i>
-                    </div>
-                    <h4 class="text-lg font-bold">DevOps & Cloud</h4>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Controle de versão robusto no Git, fluxos de CI/CD para deploy seguro de microsserviços na Vercel e Azure.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Git / GitHub</span>
-                        <span class="px-2 py-1 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Vercel</span>
+                    <div class="about-links">
+                        <a class="link-arrow" href="https://www.linkedin.com/in/julia-marques-fialho/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+                        <a class="link-arrow" href="https://github.com/Juliamdev" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Projetos: Grid Duplo e Ultra Profissional -->
-        <section id="projetos" class="space-y-12 scroll-mt-24">
-            <div class="flex flex-col items-center text-center space-y-3">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-purple-400 font-bold">Portfólio</h2>
-                <h3 class="text-3xl font-bold tracking-tight">Sistemas em Destaque</h3>
-                <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xl">
-                    Hospedados em ambiente de alta disponibilidade para acesso imediato e validação arquitetural.
-                </p>
+        <!-- ===================== Contato ===================== -->
+        <section id="contato" class="wrap section contact">
+            <div class="contact-intro">
+                <p class="kicker">Contato</p>
+                <h2>Tem um projeto ou uma vaga em mente?</h2>
+                <p>Conte um pouco do contexto e eu retorno por e-mail.</p>
+                <a class="contact-mail" href="mailto:juliafialho.dev@gmail.com">juliafialho.dev@gmail.com</a>
             </div>
 
-            <!-- Grade de Projetos - **Duas Colunas  -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Card Projeto 1: YOLO Hospitalar -->
-                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/5 transition-all duration-300">
-                    <!-- Preview Imagem de Alta Qualidade -->
-                    <div class="relative h-40 overflow-hidden bg-slate-900 flex items-center justify-center">
-                        <img 
-                            src="http://googleusercontent.com/image_collection/image_retrieval/3149238936441184167_0" 
-                            alt="YOLOv8 Hospitalar" 
-                            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.src='https://placehold.co/600x400/1e1b4b/a855f7?text=YOLO+Hospitalar'"
-                        >
-                        <!-- Badge flutuante de status -->
-                        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-600/90 text-white shadow-md">Computer Vision</span>
-                    </div>
+            <form id="contactForm" class="contact-form" novalidate>
+                <input type="hidden" name="access_key" value="e91a9435-1539-4105-9dcc-c7f9bc194e48">
+                <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
 
-                    <!-- Informações do Projeto -->
-                    <div class="p-8 space-y-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-mono text-purple-500 font-semibold uppercase">YOLOv8 & PyTorch</span>
-                            </div>
-                            <h4 class="text-2xl font-bold group-hover:text-purple-400 transition-colors">YOLOv8 Instrumentos Cirúrgicos</h4>
-                            <p class="text-slate-500 dark:text-slate-350 text-sm font-light leading-relaxed">
-                                Plataforma de visão computacional de ponta para ambientes médicos. Analisa fluxos de vídeo em tempo real para rastrear, contar e catalogar instrumentos no pré e pós operatório, mitigando em até 99.4% o risco de esquecimento acidental.
-                            </p>
-                        </div>
-
-                        <div class="space-y-6 pt-4">
-                            <!-- Tech tags de alta precisão -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-mono">Python</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-mono">YOLOv8</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-mono">OpenCV</span>
-                            </div>
-
-                            <!-- Botões de Ação com excelente feedback no toque e clique -->
-                            <!-- <div class="flex items-center gap-4">
-                                <a href="https://github.com" target="_blank" class="flex-1 py-3 px-4 rounded-xl text-center border border-slate-300 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold transition duration-200">
-                                    <i class="fa-brands fa-github mr-1.5"></i> Código-Fonte
-                                </a>
-                                <a href="https://vercel.com" target="_blank" class="flex-1 py-3 px-4 rounded-xl text-center bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold shadow-lg shadow-purple-600/10 transition duration-200">
-                                    Acessar Demo <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i>
-                                </a>
-                            </div> -->
-                        </div>
-                    </div>
+                <fieldset class="field field-full topic">
+                    <legend>Assunto</legend>
+                    <label><input type="radio" name="assunto" value="Projeto" checked><span>Projeto</span></label>
+                    <label><input type="radio" name="assunto" value="Oportunidade de trabalho"><span>Oportunidade</span></label>
+                    <label><input type="radio" name="assunto" value="Outro"><span>Outro</span></label>
+                </fieldset>
+                <div class="field">
+                    <label for="contactName">Nome</label>
+                    <input type="text" id="contactName" name="name" required autocomplete="name">
                 </div>
-
-                <!-- Card Projeto 2: VisionFinance -->
-                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300">
-                    <!-- Preview Imagem de Alta Qualidade -->
-                    <div class="relative h-40 overflow-hidden bg-slate-900 flex items-center justify-center">
-                        <img 
-                            src="http://googleusercontent.com/image_collection/image_retrieval/7591142742991760276_0" 
-                            alt="VisionFinance API" 
-                            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.src='https://placehold.co/600x400/0c4a6e/38bdf8?text=VisionFinance'"
-                        >
-                        <!-- Badge flutuante de status -->
-                        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-600/90 text-white shadow-md">Backend Architecture</span>
-                    </div>
-
-                    <!-- Informações do Projeto -->
-                    <div class="p-8 space-y-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-mono text-blue-500 font-semibold uppercase">ASP.NET Core & SQL Server</span>
-                            </div>
-                            <h4 class="text-2xl font-bold group-hover:text-blue-400 transition-colors">VisionFinance Hub</h4>
-                            <p class="text-slate-500 dark:text-slate-350 text-sm font-light leading-relaxed">
-                                Solução arquitetural corporativa para contabilidade e relatórios automatizados de investimentos. Construída sob os princípios da Arquitetura Limpa (Clean Architecture), o ecossistema processa fluxos complexos em milissegundos.
-                            </p>
-                        </div>
-
-                        <div class="space-y-6 pt-4">
-                            <!-- Tech tags de alta precisão -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-mono">C# / .NET 8</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-mono">SQL Server</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-mono">EF Core</span>
-                            </div>
-
-                            <!-- Botões de Ação com excelente feedback no toque e clique -->
-                            <div class="flex items-center gap-4">
-                                <a href="https://github.com/Juliamdev/VisionFinance" target="_blank" class="flex-1 py-3 px-4 rounded-xl text-center border border-slate-300 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold transition duration-200">
-                                    <i class="fa-brands fa-github mr-1.5"></i> Código-Fonte
-                                </a>
-                                <!-- <a href="https://vercel.com" target="_blank" class="flex-1 py-3 px-4 rounded-xl text-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-lg shadow-blue-600/10 transition duration-200">
-                                    Acessar Demo <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i>
-                                </a> -->
-                            </div>
-                        </div>
-                    </div>
+                <div class="field">
+                    <label for="contactEmail">E-mail</label>
+                    <input type="email" id="contactEmail" name="email" required autocomplete="email">
                 </div>
-
-                <!-- Projeto 3: Algoritmos CLI -->
-                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300">
-                    <!-- Visual/Header da CLI -->
-                    <div class="relative h-44 bg-slate-950 p-6 flex flex-col justify-between overflow-hidden border-b border-slate-800">
-                        <!-- Detalhe decorativo estilo terminal -->
-                        <div class="flex items-center justify-between z-10">
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                            </div>
-                            <span class="text-xs font-mono text-slate-500">v1.0.0 • xUnit Passed</span>
-                        </div>
-                        
-                        <div class="z-10 font-mono text-xs space-y-1">
-                            <p class="text-emerald-400">$ dotnet run --project src/AlgoritmosCLI</p>
-                            <p class="text-slate-400">&gt; 13 tópicos carregados com Spectre.Console...</p>
-                        </div>
-                
-                        <!-- Badge de Categoria -->
-                        <span class="absolute top-4 right-4 z-20 px-3 py-1 text-xs font-semibold rounded-full bg-blue-600/90 text-white shadow-md">
-                            CLI &amp; Educação
-                        </span>
-                
-                        <!-- Brilho no fundo -->
-                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
-                    </div>
-                
-                    <!-- Conteúdo -->
-                    <div class="p-8 space-y-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-mono text-blue-500 font-semibold uppercase">Ferramenta Interativa / Monitoria</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-400 transition-colors">
-                                Algoritmos CLI
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-350 text-sm font-light leading-relaxed">
-                                Material de apoio em linha de comando cobrindo 13 tópicos de Algoritmos. Inclui explicações teóricas, realce de sintaxe, tabela de erros comuns e desafios interativos com correção automática (Vetores, Matrizes e Exceções).
-                            </p>
-                        </div>
-                
-                        <div class="space-y-6 pt-4">
-                            <!-- Badges de Tecnologias -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">C# / .NET 8</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Spectre.Console</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">xUnit</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Clean Code</span>
-                            </div>
-                
-                            <!-- Botões de Ação -->
-                            <div class="flex items-center gap-4">
-                                <a href="https://github.com/Juliamdev/csharp-algorithms-guide" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl text-center border border-slate-300 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold transition duration-200">
-                                    <i class="fa-brands fa-github mr-1.5"></i> Repositório
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="field field-full">
+                    <label for="contactMessage">Mensagem</label>
+                    <textarea id="contactMessage" name="message" rows="4" required placeholder="O que você precisa resolver?"></textarea>
                 </div>
-                
-                <!-- Projeto 4: Guia de Commits -->
-                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300">
-                    <!-- Visual/Header Git -->
-                    <div class="relative h-44 bg-slate-950 p-6 flex flex-col justify-between overflow-hidden border-b border-slate-800">
-                        <!-- Simulação de Git Log -->
-                        <div class="flex items-center justify-between z-10">
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-code-commit text-blue-400"></i>
-                                <span class="text-xs font-mono text-slate-400">main branch</span>
-                            </div>
-                            <span class="text-xs font-mono text-emerald-400">Conventional Commits</span>
-                        </div>
-                
-                        <div class="z-10 font-mono text-xs space-y-1">
-                            <p class="text-slate-300"><span class="text-blue-400">feat(auth):</span> adiciona suporte a OAuth2</p>
-                            <p class="text-slate-500"><span class="text-emerald-400">fix(cart):</span> corrige cálculo de frete grátis</p>
-                        </div>
-                
-                        <!-- Badge de Categoria -->
-                        <span class="absolute top-4 right-4 z-20 px-3 py-1 text-xs font-semibold rounded-full bg-blue-600/90 text-white shadow-md">
-                            Guia &amp; Boas Práticas
-                        </span>
-                
-                        <!-- Brilho de fundo -->
-                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all"></div>
-                    </div>
-                
-                    <!-- Conteúdo -->
-                    <div class="p-8 space-y-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-mono text-blue-500 font-semibold uppercase">Documentação Técnica / Git Workflow</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-400 transition-colors">
-                                Guia de Boas Práticas para Commits
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-350 text-sm font-light leading-relaxed">
-                                Guia prático para padronização de histórico de versão com Conventional Commits. Aborda anatomia do commit, limites de caracteres, imperativo, além de fluxos avançados com <code class="text-xs bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">git add -p</code> e <code class="text-xs bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">git commit --amend</code>.
-                            </p>
-                        </div>
-                
-                        <div class="space-y-6 pt-4">
-                            <!-- Badges de Tecnologias -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Git</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Conventional Commits</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Code Review</span>
-                                <span class="px-2.5 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">Markdown</span>
-                            </div>
-                
-                            <!-- Botões de Ação -->
-                            <div class="flex items-center gap-4">
-                                <a href="https://github.com/Juliamdev/git-commit-guide" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl text-center border border-slate-300 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold transition duration-200">
-                                    <i class="fa-brands fa-github mr-1.5"></i> Acessar Guia
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-actions field-full">
+                    <button type="submit" id="submitBtn" class="btn">Enviar mensagem</button>
+                    <p id="formFeedback" class="feedback" role="status" aria-live="polite"></p>
                 </div>
-
-            </div>
+            </form>
         </section>
-
-
     </main>
-    
-    </main>
-   <!-- Secção Conexão / Contacto -->
-        <section id="contato" class="scroll-mt-24 max-w-4xl mx-auto">
-            <div class="glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 space-y-8">
-                <!-- Efeito de iluminação de fundo -->
-                <div class="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-purple-500/10 dark:bg-purple-500/20 blur-3xl pointer-events-none"></div>
-                <div class="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-blue-500/10 dark:bg-blue-500/20 blur-3xl pointer-events-none"></div>
 
-                <div class="text-center space-y-3 relative z-10">
-                    <h3 class="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-purple-400 font-bold">Interação Direta</h3>
-                    <h4 class="text-3xl font-bold tracking-tight">Iniciar Conversa</h4>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm max-w-md mx-auto">
-                        Seja para discutir arquiteturas de microsserviços, oportunidades de estágio ou novos horizontes de IA.
-                    </p>
-                </div>
-
-                <!-- Formulário com Atributos Name e Id Vinculados ao Web3Forms -->
-                <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleContactSubmit(event)" class="space-y-6 max-w-2xl mx-auto relative z-10">
-                    
-                    <!-- [AQUI ESTÁ A CHAVE DE ACESSO] Guardada de forma centralizada e limpa -->
-                    <input type="hidden" name="access_key" id="web3formsKey" value="e91a9435-1539-4105-9dcc-c7f9bc194e48">
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="space-y-2">
-                            <label class="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">Nome ou Empresa</label>
-                            <input type="text" name="name" id="contactName" required placeholder="Escreva o seu nome..." class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:focus:ring-purple-400 dark:focus:border-purple-400 outline-none text-sm transition-all">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">E-mail</label>
-                            <input type="email" name="email" id="contactEmail" required placeholder="parceiro@empresa.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:focus:ring-purple-400 dark:focus:border-purple-400 outline-none text-sm transition-all">
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">A sua Mensagem</label>
-                        <textarea name="message" id="contactMessage" required rows="4" placeholder="O que gostaria de construir em conjunto?" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:focus:ring-purple-400 dark:focus:border-purple-400 outline-none text-sm transition-all"></textarea>
-                    </div>
-
-                    <!-- Botão de feedback interativo -->
-                    <div class="flex items-center justify-between flex-wrap gap-4 pt-2">
-                        
-                        <button type="submit" id="submitBtn" class="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-purple-600 dark:to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:hover:from-purple-700 dark:hover:to-indigo-700 text-white font-semibold rounded-xl text-sm transition duration-200 shadow-md">
-                            Enviar Mensagem <i class="fa-solid fa-paper-plane ml-2"></i>
-                        </button>
-                    </div>
-                </form>
-
-                <!-- Feedback Visual Otimizado (Não intrusivo) -->
-                <div id="formFeedback" class="hidden max-w-2xl mx-auto p-4 rounded-xl text-center font-semibold text-sm transition duration-300"></div>
-            </div>
-        </section>
-
-    <!-- Footer Premium -->
-    <footer class="border-t border-slate-200 dark:border-slate-900 py-12 mt-20 relative z-10 bg-slate-50/50 dark:bg-slate-950/30">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-sm text-slate-400">&copy; 2026 Julia Fialho. Todos os direitos reservados.</p>
-            <div class="flex items-center gap-6 text-slate-400 text-sm">
-                <a href="https://github.com/Juliamdev" target="_blank" class="hover:text-blue-500 dark:hover:text-purple-400 transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
-                <a href="https://linkedin.com/in/julia-marques-fialho" target="_blank" class="hover:text-blue-500 dark:hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
-                <! -- span class="font-mono text-xs">made_with_code_and_coffee.py -->
-            </div>
-            <!-- <div class="flex items-center gap-3 text-sm text-slate-500">
-                    <i class="fa-solid fa-envelope text-blue-500 dark:text-purple-400"></i>
-                    <span class="font-mono text-xs select-all">juliamarquesfialho@gmail.com</span>
-            </div> -->
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <p>© <span id="year">2026</span> Julia Fialho · Belo Horizonte, MG</p>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/julia-marques-fialho/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com/Juliamdev" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="#">Topo ↑</a></li>
+            </ul>
         </div>
     </footer>
 
-    <!-- Importação do Script de Logica Separado -->
     <script src="js/main.js" defer></script>
-
 </body>
 </html>
