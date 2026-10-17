@@ -6,15 +6,15 @@ Site pessoal com projetos, experiência e contato.
 
 ## Stack
 
-HTML, CSS e JavaScript puros, sem build. Fontes Geist e Geist Mono via Google Fonts e formulário de contato via [Web3Forms](https://web3forms.com).
+HTML, CSS e JavaScript puros, sem build. Fontes Geist e Instrument Serif via Google Fonts e formulário de contato via [Web3Forms](https://web3forms.com).
 
 ## Estrutura
 
 ```
 index.html        # conteúdo da página
 css/style.css     # tokens de cor, layout e responsivo
-js/main.js        # animações de entrada e envio do formulário
-assets/           # foto e capturas dos projetos
+js/main.js        # animações de entrada, atalhos dos serviços e envio do formulário
+assets/           # foto e capturas das landing pages e projetos
 ```
 
 ## Rodando localmente

@@ -5,7 +5,7 @@ onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
 // 2. Entrada suave dos blocos ao aparecerem na tela
-const revealTargets = document.querySelectorAll('.section-head, .case, .service, .process li, .about, .contact > *');
+const revealTargets = document.querySelectorAll('.section-head, .showcase, .card, .offer, .process li, .about, .contact > *');
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -24,7 +24,15 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
 // 3. Ano no rodapé
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// 4. Formulário de contato (Web3Forms)
+// 4. Botões dos serviços já marcam o assunto no formulário
+document.querySelectorAll('[data-assunto]').forEach((link) => {
+    link.addEventListener('click', () => {
+        const radio = document.querySelector(`input[name="assunto"][value="${link.dataset.assunto}"]`);
+        if (radio) radio.checked = true;
+    });
+});
+
+// 5. Formulário de contato (Web3Forms)
 const form = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const feedback = document.getElementById('formFeedback');
